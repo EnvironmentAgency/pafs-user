@@ -5,5 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Dir[Rails.root.join('db', 'seeds', '*.rb')].each {|file| load file }
 
 PafsCore::ReferenceCounter.seed_counters
+
+SEEDS = [
+  Seeds::Development
+]
+
+SEEDS.select(&:applicable?).map(&:apply)
