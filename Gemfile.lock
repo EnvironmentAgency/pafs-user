@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/DEFRA/pafs_core
-  revision: d7360ec39823bd421179c1eff607de39ace22653
-  branch: develop
+  revision: 645db5b4aa4482f700d0699aad41e2997f138f63
+  branch: PM-440
   specs:
     pafs_core (0.0.2)
       aws-sdk (~> 2)
@@ -100,6 +100,9 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (~> 1.2)
       xpath (~> 3.2)
+    capybara-selenium (0.0.6)
+      capybara
+      selenium-webdriver
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
     chronic (0.10.2)
@@ -243,6 +246,7 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
     public_suffix (3.0.3)
+    puma (3.12.1)
     rack (1.6.11)
     rack-cors (1.0.3)
     rack-test (0.6.3)
@@ -336,6 +340,9 @@ GEM
       rdoc (~> 4.0)
     secure_headers (3.7.3)
       useragent
+    selenium-webdriver (3.142.3)
+      childprocess (>= 0.5, < 2.0)
+      rubyzip (~> 1.2, >= 1.2.2)
     shellany (0.0.1)
     shoulda-matchers (3.1.3)
       activesupport (>= 4.0.0)
@@ -377,6 +384,10 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    webdrivers (4.0.0)
+      nokogiri (~> 1.6)
+      rubyzip (~> 1.0)
+      selenium-webdriver (~> 3.0)
     whenever (0.11.0)
       chronic (>= 0.6.3)
     xpath (3.2.0)
@@ -391,6 +402,7 @@ DEPENDENCIES
   byebug
   capybara
   climate_control
+  capybara-selenium
   codeclimate-test-reporter (~> 0.6)
   coffee-rails (~> 4.1.0)
   database_cleaner
@@ -417,6 +429,7 @@ DEPENDENCIES
   passenger (~> 5.1)
   pg (~> 0.20.0)
   pry
+  puma
   rails (~> 4.2.11.1)
   rails_12factor
   rake (< 11.0)
@@ -433,6 +446,7 @@ DEPENDENCIES
   therubyracer
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+  webdrivers
   whenever
 
 BUNDLED WITH
