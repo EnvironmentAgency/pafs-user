@@ -11,12 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180823131284) do
+ActiveRecord::Schema.define(version: 20190613135917) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "citext"
-  enable_extension "hstore"
 
   create_table "old_passwords", force: :cascade do |t|
     t.string   "encrypted_password",       null: false
@@ -126,6 +124,21 @@ ActiveRecord::Schema.define(version: 20180823131284) do
     t.integer "moved_from_very_significant_and_significant_to_moderate_or_low"
     t.integer "households_protected_from_loss_in_20_percent_most_deprived"
   end
+
+  create_table "pafs_core_funding_contributors", force: :cascade do |t|
+    t.string   "name"
+    t.string   "contributor_type"
+    t.integer  "funding_value_id"
+    t.integer  "amount"
+    t.boolean  "secured",          default: false, null: false
+    t.boolean  "constrained",      default: false, null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+  end
+
+  add_index "pafs_core_funding_contributors", ["contributor_type"], name: "index_pafs_core_funding_contributors_on_contributor_type", using: :btree
+  add_index "pafs_core_funding_contributors", ["funding_value_id", "contributor_type"], name: "funding_contributors_on_funding_value_id_and_type", using: :btree
+  add_index "pafs_core_funding_contributors", ["funding_value_id"], name: "index_pafs_core_funding_contributors_on_funding_value_id", using: :btree
 
   create_table "pafs_core_funding_values", force: :cascade do |t|
     t.integer "project_id"
