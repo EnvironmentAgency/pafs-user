@@ -52,7 +52,7 @@ gem "whenever", require: false
 # shared PAFS code
 gem "pafs_core", "~> 0.0",
   git: "https://github.com/DEFRA/pafs_core",
-  branch: 'develop'
+  branch: 'PM-440'
 
 group :development, :test do
   gem "rspec-rails"
@@ -72,7 +72,12 @@ group :test do
   gem "factory_bot_rails", "~> 4.0"
   gem "shoulda-matchers", "~> 3.1"
   gem "faker"
+  
   gem "capybara"
+  gem 'capybara-selenium'
+  gem 'webdrivers'
+  gem 'puma'
+
   gem "database_cleaner"
   gem "simplecov", require: false
   gem "codeclimate-test-reporter", "~> 0.6", require: false

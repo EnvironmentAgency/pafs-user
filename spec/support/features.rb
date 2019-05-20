@@ -9,4 +9,5 @@ RSpec.configure do |config|
 
   config.include Features::AuthenticationSteps, type: :feature
   config.include Features::ProposalSteps, type: :feature
+  config.include Features::FundingSourcesSteps, type: :feature
 end
