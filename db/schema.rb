@@ -129,11 +129,11 @@ ActiveRecord::Schema.define(version: 20190613135917) do
     t.string   "name"
     t.string   "contributor_type"
     t.integer  "funding_value_id"
-    t.integer  "amount"
-    t.boolean  "secured",          default: false, null: false
-    t.boolean  "constrained",      default: false, null: false
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.integer  "amount",           limit: 8
+    t.boolean  "secured",                    default: false, null: false
+    t.boolean  "constrained",                default: false, null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
   end
 
   add_index "pafs_core_funding_contributors", ["contributor_type"], name: "index_pafs_core_funding_contributors_on_contributor_type", using: :btree
