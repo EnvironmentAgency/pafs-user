@@ -91,15 +91,16 @@ def run_spec_configuration(spec)
 end
 
 RSpec.feature 'Viewing a project', type: :feature do
-  context 'without FORCE_PSO_TO_POL set' do
+  context 'without PSO_CANNOT_CREATE_PROJECTS set' do
     FLAG_DISABLED_SPECS.each do |spec|
       run_spec_configuration(spec)
     end
   end
 
-  context 'with FORCE_PSO_TO_POL set' do
+  context 'with PSO_CANNOT_CREATE_PROJECTS set' do
     FLAG_ENABLED_SPECS.each do |spec|
       before do
+        allow(ENV).to receive(:fetch).with('PSO_CANNOT_CREATE_PROJECTS', false).and_return(true)
         allow(ENV).to receive(:fetch).with('FORCE_PSO_TO_POL', false).and_return(true)
       end
 

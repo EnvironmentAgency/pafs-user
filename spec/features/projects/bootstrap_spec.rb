@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.feature 'Creating a project', type: :feature do
-  context 'without FORCE_PSO_TO_POL set' do
+  context 'without PSO_CANNOT_CREATE_PROJECTS set' do
     context 'as an rma user' do
       let(:user) { create(:account_user, :rma) }
 
@@ -29,8 +29,9 @@ RSpec.feature 'Creating a project', type: :feature do
     end
   end
 
-  context 'with FORCE_PSO_TO_POL set' do
+  context 'with PSO_CANNOT_CREATE_PROJECTS set' do
     before do
+      allow(ENV).to receive(:fetch).with('PSO_CANNOT_CREATE_PROJECTS', false).and_return(true)
       allow(ENV).to receive(:fetch).with('FORCE_PSO_TO_POL', false).and_return(true)
     end
 

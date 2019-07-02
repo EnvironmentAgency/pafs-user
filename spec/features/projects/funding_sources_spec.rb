@@ -2,7 +2,7 @@
 
 include ActionView::Helpers::NumberHelper
 
-RSpec.feature 'Adding a projects funding sources', type: :feature, focus: true do
+RSpec.feature 'Adding a projects funding sources', type: :feature do
   let(:user) { create(:account_user, :rma) }
 
   before do
