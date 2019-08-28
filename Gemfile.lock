@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/DEFRA/pafs_core
-  revision: e9fa9748d8c83c4d4abab6f902192818d2f8c7b3
-  branch: PM-440
+  revision: 3831c73afbcf3aceb0b0ef7b88df0c861ccf7493
+  branch: training
   specs:
     pafs_core (0.0.2)
       aws-sdk (~> 2)
