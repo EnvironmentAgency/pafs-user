@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/DEFRA/pafs_core
-  revision: fe18faf2d43b5863144d431e734ba1f1620dc6b5
+  revision: e9fa9748d8c83c4d4abab6f902192818d2f8c7b3
   branch: PM-440
   specs:
     pafs_core (0.0.2)
@@ -402,8 +402,8 @@ DEPENDENCIES
   benchmark-ips
   byebug
   capybara
-  climate_control
   capybara-selenium
+  climate_control
   codeclimate-test-reporter (~> 0.6)
   coffee-rails (~> 4.1.0)
   database_cleaner
