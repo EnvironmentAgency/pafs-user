@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/DEFRA/pafs_core
-  revision: 2f08f6e6237bb532011ee232a14a4067afff4f57
+  revision: 8989afe2e3a6381b5386a8f33d7f40fe51c92e49
   branch: training
   specs:
     pafs_core (0.0.2)
