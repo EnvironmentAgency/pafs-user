@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/DEFRA/pafs_core
-  revision: c49ff5f3f76a3b1e1aa126fd431178941de15d46
+  revision: 4292e34b94ccd5458c66da4ce3dcd2de1c87de71
   branch: training
   specs:
     pafs_core (0.0.2)
@@ -320,9 +320,9 @@ GEM
       rspec-support (~> 3.8.0)
     rspec-support (3.8.0)
     ruby-prof (0.17.0)
-    rubyXL (3.4.6)
+    rubyXL (3.4.9)
       nokogiri (>= 1.4.4)
-      rubyzip (>= 1.1.6)
+      rubyzip (>= 1.3.0)
     ruby_dep (1.5.0)
     rubyzip (1.3.0)
     sass (3.7.4)
