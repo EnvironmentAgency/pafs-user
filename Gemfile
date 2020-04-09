@@ -51,7 +51,7 @@ gem "whenever", require: false
 # shared PAFS code
 gem "pafs_core", "~> 0.0",
   git: "https://github.com/DEFRA/pafs_core",
-  branch: 'develop'
+  branch: 'spike-remove-unlock'
 
 group :development, :test do
   gem "rspec-rails"
